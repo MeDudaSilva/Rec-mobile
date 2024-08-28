@@ -1,8 +1,8 @@
 <script setup>
 import ProductList from '@/components/ProductList.vue'
-defineProps(['category_id'])
+defineProps(['manufacturer_id'])
 </script>
 
 <template>
-  <product-list :category_id="category_id" />
+  <product-list :manufacturer_id="manufacturer_id" />
 </template>

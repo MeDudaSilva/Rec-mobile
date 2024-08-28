@@ -1,65 +1,68 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 
-import LogoTitle from '@/components/templates/LogoTitle.vue';
+import LogoTitle from '@/components/templates/LogoTitle.vue'
 
-import { useCategoryStore } from '@/stores/category';
-const categoryStore = useCategoryStore();
+import { useManufacturerStore } from '@/stores/manufacturer'
+const manufacturerStore = useManufacturerStore()
 
 onMounted(async () => {
-    await categoryStore.getCategories();
-});
-
+  await manufacturerStore.getManufacturers()
+})
 </script>
 <template>
-    <div class="logo_and_menu">
-        <logo-title class="mb-2" />
-        <div class="divider" />
-        <div class="menu">
-            <router-link to="/">
-                <i class="icon mdi mdi-home-outline" /> Home
-            </router-link>
-            <router-link v-for="category in  categoryStore.categories " :key="category.id"
-                :to="`/produtos/categoria/${category.id}`">
-                <i class="icon mdi" :class="category.icon"></i> {{ category.name }}
-            </router-link>
-        </div>
-        <div class="divider" />
-        <div class="menu">
-            <router-link to="/login">
-                <i class="icon mdi mdi-account" /> Login
-            </router-link>
-        </div>
+  <div class="logo_and_menu">
+    <logo-title class="mb-2" />
+    <div class="divider" />
+    <div class="menu">
+      <router-link to="/"> <i class="icon mdi mdi-home-outline" /> Home </router-link>
+      <router-link to="/categorias">
+        <p>Categorias</p>
+      </router-link>
+      <router-link to="/fabricantes">
+        <p>Fabricantes</p>
+      </router-link>
+      <router-link
+        v-for="manufacturer in manufacturerStore.manufacturers"
+        :key="manufacturer.id"
+        :to="`/produtos/categoria/${manufacturer.id}`"
+      >
+        <i class="icon mdi" :class="manufacturer.icon"></i> {{ manufacturer.name }}
+      </router-link>
     </div>
-    <logo-title />
+    <div class="divider" />
+    <div class="menu">
+      <router-link to="/login"> <i class="icon mdi mdi-account" /> Login </router-link>
+    </div>
+  </div>
+  <logo-title />
 </template>
 <style scoped>
 .mb-2 {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .icon {
-    font-size: 2rem;
-    align-self: center;
-
+  font-size: 2rem;
+  align-self: center;
 }
 
 .divider {
-    margin-top: 1.rem;
-    border-top: 1px solid #EEEEEE;
+  margin-top: 1rem;
+  border-top: 1px solid #eeeeee;
 }
 
 .menu {
-    padding: 3rem;
+  padding: 3rem;
 }
 
 .menu a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #000000;
-    gap: 1rem;
-    font-size: 1.3rem;
-    margin-top: 2.2rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  gap: 1rem;
+  font-size: 1.3rem;
+  margin-top: 2.2rem;
 }
 </style>

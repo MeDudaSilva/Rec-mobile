@@ -45,7 +45,7 @@ onMounted(async () => {
           <tr v-for="category in categoryStore.categories" :key="category.id">
             <td>{{ category.id }}</td>
             <td>{{ category.name }}</td>
-            <td> <span class="mdi mdi-delete" /></td>
+            <td> <span class="mdi mdi-delete"/></td>
           </tr>
         </tbody>
 

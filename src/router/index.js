@@ -30,6 +30,10 @@ const router = createRouter({
           path: '/categorias',
           name: 'Category',
           component: () => import('@/views/CategoryView.vue')
+        }, {
+          path: '/fabricantes',
+          name: 'manufacturer',
+          component: () => import('@/views/ManufacturerView.vue')
         },
         {
           path: '/login',

@@ -6,7 +6,7 @@ services:
       - MODE=DEVELOPMENT #  possible values are: DEVELOPMENT, PRODUCTION, MIGRATE
       - SECRET_KEY=9-s=%xi$8!a#8=*6poe3cf*wxb8quc83f81tv(6^&2h@@=6wuo
       - DEBUG=True #  possible values are: True, False
-      - PASSAGE_APP_ID=
-      - PASSAGE_API_KEY=
+      - PASSAGE_APP_ID=hB9MbqDY7aBZR8ebfxFcZ34p
+      - PASSAGE_API_KEY=5WlgeRJJoc.VrmohCeheawYyDB0d4hkkF4eZjmdSlNBBnpUSGl2xE2X4e4vZFvtGsAfoBnPlwpp
     ports:
       - 8000:8000

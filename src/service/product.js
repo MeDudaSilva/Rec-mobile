@@ -6,8 +6,8 @@ export default class ProductService {
     return response.data.results
   }
 
-  async getProductByCategory(category_id) {
-    const response = await axios.get(`/products/?category__id=${category_id}`)
+  async getProductByManufacturer(manufacturer_id) {
+    const response = await axios.get(`/products/?manufacturer__id=${manufacturer_id}`)
     return response.data.results
   }
 

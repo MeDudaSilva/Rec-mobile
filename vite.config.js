@@ -48,7 +48,7 @@ export default defineConfig({
         launch_handler: {
           client_mode: ['navigate-existing', 'auto']
         },
-        categories: ['education', 'shopping']
+        manufacturers: ['education', 'shopping']
       },
       devOptions: {
         enabled: true
